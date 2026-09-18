@@ -1,11 +1,11 @@
 base_url = "https://thecatvoid.online"
-title = "Sanjay MV - Junior SysAdmin & Linux Specialist"
+title = "Sanjay MV - Linux Systems Administrator & Engineer"
 compile_sass = false
 build_search_index = false
 
 [extra]
 name = "Sanjay MV"
-headline = "Junior SysAdmin & Linux Specialist"
+headline = "Linux Systems Administrator & Infrastructure Engineer"
 location = "Kannur, Kerala, 670594, India"
 phone = "(+91) 8921180547"
 email = "sanjay.mv.official@gmail.com"
@@ -13,17 +13,18 @@ linkedin = "https://www.linkedin.com/in/sanjay-mv-5b4946319"
 github = "https://github.com/snjy5"
 website = "https://thecatvoid.online"
 github_username = "snjy5"
-summary = "Self-taught SysAdmin and Linux Specialist with 7+ years of independent and personal, hands-on experience designing, automating, and securing server, cloud, and self-hosted infrastructure. Strong background in kernel compilation, deployment pipelines, and general software maintenance, building, patching and debugging. Now seeking a first professional role to apply this depth within a team environment."
+summary = "Self-taught SysAdmin and Linux Specialist with over 7 years of hands-on experience designing, automating, and securing server, cloud, and self-hosted infrastructure. Proficient with GNU/Linux systems, kernel compilation, deployment pipelines, and general software maintenance. Adept at building, patching, and debugging server environments. Seeking a collaborative engineering role to apply deep technical expertise and passion for open-source technologies within a dynamic team."
 
 skills = [
   { category = "Operating Systems", items = "Proxmox, Fedora, Ubuntu, Debian, Arch, Gentoo, NixOS, RHEL, Void Linux" },
-  { category = "Languages & Scripting", items = "Bash, POSIX sh, Python, Java, PHP" },
-  { category = "Virtualization & Cloud", items = "Hetzner VPS, Docker, virt-manager, QEMU, VirtualBox" },
-  { category = "Automation & CI/CD", items = "Ansible, Terraform, GitHub/GitLab/Cirrus CI, custom systemd units & timers" },
-  { category = "Networking & Security", items = "DNS, DHCP, HTTP servers, VPNs, Firewalls (ufw/iptables/firewalld), Cisco CLI, Network Routing, TCP/IP, Disk Encryption, Linux hardening" },
-  { category = "Storage & Databases", items = "MySQL, SQLite, Partitioning, ZFS software RAID, LVM, Backup Pipelines" },
-  { category = "Systems Engineering & Recovery", items = "System rescue & data recovery, GRUB rescue, PKGBUILD/AUR, Gentoo EBUILDs, Makefiles, sysfs management, kernel compilation" },
-  { category = "Text & Config Management", items = "Vim, Nano, Sed, Awk, Regex" },
+  { category = "Languages & Scripting", items = "Bash, POSIX sh, Python, Java, PHP, HTML, HCL" },
+  { category = "Virtualization & Cloud", items = "Hetzner VPS, AWS, Docker, virt-manager, QEMU/KVM, VirtualBox" },
+  { category = "Automation & CI/CD", items = "Ansible, Terraform, GitHub Actions, GitLab CI, Cirrus CI" },
+  { category = "Networking & Security", items = "DNS, DHCP, HTTP servers, VPNs, Firewalls (ufw/iptables/firewalld), Network Routing, TCP/IP, Disk Encryption, Linux Hardening" },
+  { category = "Storage & Databases", items = "MySQL, SQLite, Partitioning, ZFS software RAID, LVM, Automated Backup Pipelines" },
+  { category = "Systems Engineering & Recovery", items = "Linux Kernel Compilation/Configuration, Makefiles/Build Systems, GRUB/bootloader/initramfs rescue, ext4 sleuthkit, btrfs rescue, testdisk, inode/file system repair" },
+  { category = "User-Space & Desktop Linux", items = "X11/Wayland, DBus, systemd user sessions, Dotfiles management, Application dependency resolution, GUI workflow automation" },
+  { category = "Text & Config Management", items = "Vim, Nano, Sed, Awk, Regex" }
 ]
 
 [[extra.experience]]
@@ -32,23 +33,22 @@ company = "Personal & Independent Projects"
 period = "Jan 2018 – Present"
 location = "Kerala, India (Remote)"
 points = [
-  "Compiled, configured, and hardened custom Linux kernels; managed boot processes and init systems across distros.",
-  "Automated provisioning and configuration management using Ansible, Terraform, Docker, Bash, and Python; maintained self-authored Ansible roles and CI pipelines (GitHub/GitLab/Cirrus CI).",
-  "Built a Java-based offline code execution runner for direct compilation/execution.",
-  "Managed Hetzner/AWS VPS, QEMU virtual machines, and containerized self-hosted environments.",
-  "Configured DNS, DHCP, HTTP servers, and VPNs behind hardened firewalls (ufw/iptables/firewalld) with disk encryption for secure remote access.",
-  "Administered storage and databases using ZFS software RAID, LVM, MySQL/SQLite, and automated backup pipelines.",
-  "Performed system rescue and data recovery, including GRUB troubleshooting; maintained custom PKGBUILD/AUR packages, Gentoo EBUILDs, and systemd units/timers.",
+  "Infrastructure as Code (IaC): Provisioned secure, containerized, and fault-tolerant Linux servers on AWS and Hetzner using Ansible and Terraform (HCL), integrating CI/CD pipelines with dry-run emulation prior to production.",
+  "OS State & Kernel Engineering: Automated custom Linux/Android kernel compilation and Gentoo binary builds via GitHub Actions and Cirrus CI. Snapshotted OS states to reliably reproduce environments across hardware architectures.",
+  "System Automation & Recovery: Wrote custom init scripts and system-level utilities (e.g., access controls) using POSIX sh, process utilities, and cron. Executed bare-metal rescue operations including GRUB/initramfs troubleshooting and ext4/btrfs file system repair.",
+  "Network & Storage Administration: Managed ZFS software RAID, LVM, and MySQL/SQLite databases with automated backup pipelines. Configured DNS, DHCP, and VPNs behind hardened firewalls (ufw/iptables) with full disk encryption.",
+  "User-Space & Environment Debugging: Configured and debugged custom GUI workflows (X11/Wayland) and systemd user sessions, utilizing application-level dependency resolution to bridge desktop Linux expertise with headless server administration.",
+  "Software Development: Built a Java-based universal code runner and IDE application leveraging a mobile GNU/Linux environment (Termux)."
 ]
 
 [[extra.experience]]
-title = "Technical Team Intern"
+title = "Technical Infrastructure Contractor"
 company = "Kerala Development and Innovation Strategic Council"
 period = "Jan 2026 – Jun 2026"
 location = "Kannur, Kerala, India (On-site)"
 points = [
-  "Set up and ran technical infrastructure (network, power backup, conferencing) for local and mega job fairs.",
-  "Maintained IT asset logs across host facilities, tracking devices, network addresses, and hardware transfers.",
+  "Deployed and managed technical infrastructure—including networking, power redundancy, and conferencing systems—for large-scale regional job fairs.",
+  "Maintained IT asset logs across multiple host facilities, tracking network addresses, hardware transfers, and device lifecycles."
 ]
 
 [[extra.experience]]
@@ -57,8 +57,8 @@ company = "Thathwaa Communications Pvt. Ltd."
 period = "Apr 2024 – May 2024"
 location = "Kannur, Kerala, India (On-site)"
 points = [
-  "Configured Laravel environments and implemented backend routing, MVC structure, and server-side logic in PHP.",
-  "Collaborated with fellow interns to build, test, and deploy a functional school website.",
+  "Configured Laravel environments, implementing backend routing, MVC architecture, and server-side logic using PHP.",
+  "Collaborated with fellow interns to build, test, and deploy a functional school management website."
 ]
 
 [[extra.education]]
@@ -66,6 +66,6 @@ degree = "Diploma of Education, Computer Maintenance & Hardware Engineering"
 institution = "EKNMM Kalliassery Polytechnic"
 period = "Sep 2022 – May 2025"
 points = [
-  "Systems & Routing: Configured Windows Servers and Linux distributions. Managed physical routing with Cisco CLI.",
-  "Hardware Diagnostics: Performed computer assembly, system diagnostics, and bare-metal component replacement.",
+  "Systems & Routing: Configured and administered Windows Server and Linux environments; managed physical network routing utilizing Cisco IOS CLI.",
+  "Hardware Diagnostics: Executed bare-metal computer assembly, system diagnostics, and component-level hardware troubleshooting and replacement."
 ]
