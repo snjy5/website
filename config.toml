@@ -17,7 +17,7 @@ summary = "Self-taught Systems Administrator and Linux Specialist with over 7 ye
 
 skills = [
   { category = "Operating Systems", items = "Proxmox, Fedora, Ubuntu, Debian, Arch, Gentoo, NixOS, RHEL, Void Linux" },
-  { category = "Languages & Scripting", items = "Bash, POSIX sh, Python, Java, PHP, HTML, HCL" },
+  { category = "Languages & Scripting", items = "Bash, POSIX sh, Python, Java, PHP, HTML" },
   { category = "Virtualization & Cloud", items = "Hetzner VPS, AWS, Docker, virt-manager, QEMU/KVM, VirtualBox" },
   { category = "Automation & CI/CD", items = "Ansible, Terraform, GitHub Actions, GitLab CI, Cirrus CI" },
   { category = "Networking & Security", items = "DNS, DHCP, HTTP servers, VPNs, Firewalls (ufw/iptables/firewalld), Network Routing, TCP/IP, Disk Encryption, Linux Hardening" },
