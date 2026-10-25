@@ -13,7 +13,7 @@ linkedin = "https://www.linkedin.com/in/sanjay-mv-5b4946319"
 github = "https://github.com/snjy5"
 website = "https://thecatvoid.online"
 github_username = "snjy5"
-summary = "Self-taught Systems Administrator and Linux Specialist with over 7 years of hands-on experience engineering, automating, and securing home labs, cloud nodes, and self-hosted infrastructure. Operating primarily in headless GNU/Linux environments, I thrive on troubleshooting complex systems using native command-line utilities rather than GUI abstractions. Adept at low-level kernel compilation, deployment pipelines, and bare-metal recovery. Seeking a collaborative engineering role to apply my deep technical self-reliance, adaptability, and passion for open-source technologies."
+summary = "Systems Administrator and Linux Specialist with over 7 years of hands-on experience engineering, automating, and securing home labs, cloud nodes, and self-hosted infrastructure. Operating primarily in headless GNU/Linux environments, I thrive on troubleshooting complex systems using native command-line utilities rather than GUI abstractions. Adept at low-level kernel compilation, deployment pipelines, and bare-metal recovery. Seeking a collaborative engineering role to apply my deep technical self-reliance, adaptability, and passion for open-source technologies."
 
 skills = [
   { category = "Operating Systems", items = "Proxmox, Fedora, Ubuntu, Debian, Arch, Gentoo, NixOS, RHEL, Void Linux" },
@@ -29,7 +29,7 @@ skills = [
 
 [[extra.experience]]
 title = "Independent Linux Systems Engineer"
-company = "Self-Directed Home Labs & Community Projects"
+company = "Home Labs & Community Projects"
 period = "Jan 2018 – Present"
 location = "Kerala, India (Remote)"
 points = [
@@ -52,13 +52,13 @@ points = [
 ]
 
 [[extra.experience]]
-title = "Full Stack Intern"
+title = "Full Stack Developer"
 company = "Thathwaa Communications Pvt. Ltd."
 period = "Apr 2024 – May 2024"
 location = "Kannur, Kerala, India (On-site)"
 points = [
   "Configured Laravel environments, implementing backend routing, MVC architecture, and server-side logic using PHP for a functional school management platform.",
-  "Collaborated with a team of interns to build, test, and deploy the full-stack web application, bridging backend logic with frontend interfaces."
+  "Collaborated with a team to build, test, and deploy the full-stack web application, bridging backend logic with frontend interfaces."
 ]
 
 [[extra.education]]

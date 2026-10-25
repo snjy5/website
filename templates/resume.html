@@ -205,6 +205,7 @@
   <ul id="recent-projects">
     <li class="dim">Fetching recent repositories from GitHub...</li>
   </ul>
+  <p id="repo-count" class="dim" style="margin: 0.6rem 0 0;"></p>
 </section>
 
 <section>
@@ -248,32 +249,67 @@
 </div>
 
 <script>
-  (function() {
+  (async function() {
     const user = "{{ config.extra.github_username }}";
     const container = document.getElementById('recent-projects');
 
-    fetch(`https://api.github.com/users/${user}/repos?sort=pushed&per_page=30`)
-      .then(res => res.json())
-      .then(repos => {
-        if (!Array.isArray(repos) || repos.length === 0) {
-          container.innerHTML = '<li class="dim">No public repositories found.</li>';
-          return;
-        }
-        const items = repos
-          .filter(repo => !repo.fork)
-          .slice(0, 10)
-          .map(repo => `
-            <li>
-              <a href="${repo.html_url}" target="_blank" rel="noopener">${repo.name}</a>
-              ${repo.language ? `<span class="dim">(${repo.language})</span>` : ''}
-              &mdash; ${repo.description || 'No description provided.'}
-            </li>
-          `).join('');
-        container.innerHTML = items || '<li class="dim">No original repositories found.</li>';
-      })
-      .catch(() => {
-        container.innerHTML = '<li class="dim">Unable to connect to GitHub API.</li>';
-      });
+    // ---- Settings ----
+    const LIMIT = 0;             // 0 = show ALL repos; set to 15 to show only the 15 most recent
+    const INCLUDE_FORKS = true;  // set false to hide forked repos
+    const PER_PAGE = 100;        // GitHub's maximum page size
+    const MAX_PAGES = 10;        // safety cap: up to 1000 repos
+
+    const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+
+    let repos = [];
+    let failed = false;
+
+    // GitHub returns at most 100 repos per request, so keep fetching pages
+    // until a page comes back short (or empty).
+    for (let page = 1; page <= MAX_PAGES; page++) {
+      try {
+        const res = await fetch(
+          `https://api.github.com/users/${encodeURIComponent(user)}/repos?sort=pushed&direction=desc&per_page=${PER_PAGE}&page=${page}`
+        );
+        if (!res.ok) { failed = true; break; }
+        const batch = await res.json();
+        if (!Array.isArray(batch) || batch.length === 0) break;
+        repos = repos.concat(batch);
+        if (batch.length < PER_PAGE) break;
+        if (LIMIT > 0 && repos.length >= LIMIT * 3) break; // enough to fill LIMIT after filtering
+      } catch (e) {
+        failed = true;
+        break;
+      }
+    }
+
+    if (!INCLUDE_FORKS) repos = repos.filter((r) => !r.fork);
+    if (LIMIT > 0) repos = repos.slice(0, LIMIT);
+
+    if (repos.length === 0) {
+      container.innerHTML = failed
+        ? '<li class="dim">Unable to load repositories from GitHub right now (the API may be rate-limited).</li>'
+        : '<li class="dim">No public repositories found.</li>';
+      return;
+    }
+
+    container.innerHTML = repos.map((repo) => `
+      <li>
+        <a href="${esc(repo.html_url)}" target="_blank" rel="noopener">${esc(repo.name)}</a>
+        ${repo.language ? `<span class="dim">(${esc(repo.language)})</span>` : ''}
+        ${repo.fork ? '<span class="dim">[fork]</span>' : ''}
+        &mdash; ${esc(repo.description || 'No description provided.')}
+      </li>
+    `).join('');
+
+    // Visible proof of which version is running + whether the list is complete
+    const countEl = document.getElementById('repo-count');
+    if (countEl) {
+      countEl.textContent = `Showing ${repos.length} repositories` +
+        (failed ? ' (list may be incomplete: GitHub API error or rate limit)' : '');
+    }
   })();
 </script>
 
